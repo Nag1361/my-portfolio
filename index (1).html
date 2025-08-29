@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Fest 2025</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; background: #f4f4f9; color: #333; }
+
+    /* Navbar */
+    header {
+      background: #1e1e2f;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 { font-size: 24px; letter-spacing: 2px; }
+    nav ul { list-style: none; display: flex; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { color: #fff; text-decoration: none; transition: 0.3s; }
+    nav ul li a:hover { color: #f9d342; }
+
+    /* Hero Section */
+    .hero {
+      height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('https://images.unsplash.com/photo-1515162305285-9df0aee56472') no-repeat center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero h2 { font-size: 48px; margin-bottom: 20px; }
+    .hero p { font-size: 20px; margin-bottom: 20px; }
+    .btn {
+      padding: 12px 25px;
+      background: #f9d342;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #ff9800; color: #fff; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sections */
+    section { padding: 60px 20px; text-align: center; }
+    section h2 { font-size: 32px; margin-bottom: 20px; }
+
+    /* Event Cards */
+    .events { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .card {
+      background: white;
+      width: 280px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: scale(1.05); }
+    .card h3 { margin-bottom: 10px; }
+
+    /* Registration */
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button { width: 100%; }
+
+    /* Footer */
+    footer {
+      background: #1e1e2f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <h1>College Fest 2025</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to College Fest 2025 🎉</h2>
+    <p>Join us for 3 days of fun, learning, and celebration!</p>
+    <button class="btn" onclick="scrollToSection('register')">Register Now</button>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About The Fest</h2>
+    <p>Our annual college fest brings together talent, creativity, and enthusiasm. Enjoy cultural shows, technical competitions, workshops, and more!</p>
+  </section>
+
+  <!-- Events -->
+  <section id="events">
+    <h2>Fest Events</h2>
+    <div class="events">
+      <div class="card"><h3>Dance Battle</h3><p>Show your moves and win exciting prizes!</p></div>
+      <div class="card"><h3>Hackathon</h3><p>24-hour coding challenge for techies.</p></div>
+      <div class="card"><h3>Battle of Bands</h3><p>Feel the music and rock the stage!</p></div>
+      <div class="card"><h3>Treasure Hunt</h3><p>Fun, clues, and hidden surprises!</p></div>
+    </div>
+  </section>
+
+  <!-- Register -->
+  <section id="register">
+    <h2>Register Now</h2>
+    <form id="regForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="event" placeholder="Event you want to join"></textarea>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: collegefest2025@gmail.com</p>
+    <p>Phone: +91 9876543210</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 College Fest. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Form submission
+    document.getElementById("regForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      alert("🎉 Thank you for registering! We’ll get back to you soon.");
+      document.getElementById("regForm").reset();
+    });
+  </script>
+</body>
+</html>
